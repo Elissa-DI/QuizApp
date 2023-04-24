@@ -1,6 +1,8 @@
 const startBtn = document.querySelector('.start-btn');
-const questionContainer = document.querySelector('#question-container');
- //const shuffledQuestions, currentQuestionIndex;
+const questionContainer = document.querySelector('#question-container')
+//const shuffledQuestions, currentQuestionIndex
+const questionEl = document.querySelector('#question');
+const answerBtnEl = document.querySelector('#answer-buttons');
 
 startBtn.addEventListener('click', startGame);
 
@@ -9,7 +11,9 @@ function startGame() {
     questionContainer.classList.remove('hide');
     nextQuestion()
 }
-
+function setNextQuestion() {
+    
+}
 function nextQuestion() {
     
 }
