@@ -1,21 +1,24 @@
 const startBtn = document.querySelector('.start-btn');
 const questionContainer = document.querySelector('#question-container')
-//const shuffledQuestions, currentQuestionIndex
 const questionEl = document.querySelector('#question');
 const answerBtnEl = document.querySelector('#answer-buttons');
+
+let shuffledQuestions, currentQuestionIndex
 
 startBtn.addEventListener('click', startGame);
 
 function startGame() {
     startBtn.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
     questionContainer.classList.remove('hide');
-    nextQuestion()
+    setNextQuestion()
 }
 function setNextQuestion() {
-    
+    showQuestion(shuffledQuestions[currentQuestionIndex])
 }
-function nextQuestion() {
-    
+function showQuestion() {
+    questionEl.innerText = question.question
 }
 
 function selectAnswer() {
