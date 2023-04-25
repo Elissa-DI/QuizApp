@@ -7,6 +7,10 @@ const answerBtnEl = document.querySelector('#answer-buttons');
 let shuffledQuestions, currentQuestionIndex
 
 startBtn.addEventListener('click', startGame);
+nextBtn.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion()
+});
 
 function startGame() {
     startBtn.classList.add('hide');
@@ -27,7 +31,7 @@ function showQuestion(question) {
         button.innerText = answer.text
         button.classList.add('btn')
         if(answer.correct) {
-            button.dataset.corret = answer.correct
+            button.dataset.correct = answer.correct
         }
         button.addEventListener('click', selectAnswer)
         answerBtnEl.appendChild(button);
@@ -48,6 +52,12 @@ function selectAnswer(e) {
     Array.from(answerBtnEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if(shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextBtn.classList.remove('hide')
+    } else {
+        startBtn.innerText = 'Restart'
+        startBtn.classList.remove('hide')
+    }
 }
 
 function setStatusClass(element, correct) {
