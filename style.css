@@ -71,3 +71,27 @@ body.wrong {
 .hide {
     display: none;
 }
+.first {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-family: cursive;
+}
+.right {
+    margin: 130px;
+    float: right;
+}
+.right h2 {
+    
+}
+.right ul li {
+    list-style: none;
+}
+
+.left {
+    float: left;
+}
+.left img {
+    margin: 80px 0px 0px 5px;
+}
