@@ -41,8 +41,17 @@ function resetState() {
     }
 }
 
-function selectAnswer() {
+function selectAnswer(e) {
+    const selectBtn = e.target
+    const correct = selectBtn.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerBtnEl.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+}
 
+function setStatusClass(element, correct) {
+    
 }
 
 const questions = [
