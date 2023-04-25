@@ -15,11 +15,22 @@ function startGame() {
     setNextQuestion()
 }
 function setNextQuestion() {
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
-function showQuestion() {
-    questionEl.innerText = question.question
+
+function showQuestion(question) {
+    questionEl.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if(answer.correct) {
+            button.dataset.corret = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+    })
 }
+
 
 function selectAnswer() {
 
