@@ -1,4 +1,5 @@
 const startBtn = document.querySelector('.start-btn');
+const nextBtn = document.querySelector('.next-btn');
 const questionContainer = document.querySelector('#question-container')
 const questionEl = document.querySelector('#question');
 const answerBtnEl = document.querySelector('#answer-buttons');
@@ -15,6 +16,7 @@ function startGame() {
     setNextQuestion()
 }
 function setNextQuestion() {
+    resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
@@ -28,9 +30,16 @@ function showQuestion(question) {
             button.dataset.corret = answer.correct
         }
         button.addEventListener('click', selectAnswer)
+        answerBtnEl.appendChild(button);
     })
 }
 
+function resetState() {
+    nextBtn.classList.add('hide')
+    while(answerBtnEl.firstChild) {
+        answerBtnEl.removeChild(answerBtnEl.firstChild)
+    }
+}
 
 function selectAnswer() {
 
