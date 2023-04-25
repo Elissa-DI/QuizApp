@@ -82,5 +82,48 @@ const questions = [
             { text: '4', correct: true},
             { text: '22', correct: false }
         ]
+    },
+    {
+        question: 'What is 2 * 16',
+        answers: [
+            { text: '4', correct: false},
+            { text: '24', correct: false },
+            { text: '32', correct: true }
+        ]
+    },
+    {
+        question: 'What is 100 % 3',
+        answers: [
+            { text: '6', correct: false},
+            { text: '1', correct: true },
+            { text: '4', correct: false}
+        ]
+    },
+    {
+        question: 'What is 403 - 207',
+        answers: [
+            { text: '4', correct: false},
+            { text: '22', correct: false },
+            { text: '196', correct: true }
+        ]
+    },
+    {
+        question: 'What is 32 + 2/3',
+        answers: [
+            { text: '32.6', correct: true},
+            { text: '32.9', correct: false },
+            { text: '33.2', correct: false }
+        ]
     }
 ]
+
+//Swapping the divs
+
+const contBtn = document.querySelector('.continueBtn');
+const firstDiv = document.querySelector('.first');
+const secondDiv = document.querySelector('.container');
+
+contBtn.addEventListener('click',()=> {
+    firstDiv.style.display = 'none';
+    secondDiv.style.display = 'block';
+})
