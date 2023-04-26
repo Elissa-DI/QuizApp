@@ -83,15 +83,56 @@ body.wrong {
     float: right;
 }
 .right h2 {
-    
+    font-size: 25px;
+    animation: color 3s infinite;
+}
+@keyframes color {
+    0% {
+        color: blue;
+    }
+    35%{
+        color: rgb(61, 19, 96);
+    }
+    70%{
+        color: rgb(81, 12, 86);
+    }
+    100%{
+        color: black;
+    }
 }
 .right ul li {
     list-style: none;
+    margin-top: 3px;
 }
-
+.right ul {
+    margin-top: 80px;
+}
+.here {
+    margin-top: 10px;
+    font-size: 33px;
+}
 .left {
     float: left;
 }
 .left img {
     margin: 80px 0px 0px 5px;
+}
+.continueBtn {
+    width: 120px;
+    height: 30px;
+    color: white;
+    background-color: aqua;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s ease;
+    margin: 5px 0px 0px 270px;
+}
+.continueBtn:hover {
+    border: 1.5px solid aqua;
+    background-color: white;
+    color: aqua;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
